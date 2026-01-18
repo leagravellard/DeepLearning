@@ -1,0 +1,76 @@
+# Deep Learning – Natural Scene Classification
+
+## 🎯 Objectif du projet
+L’objectif est de résoudre un **problème de classification d’images multi-classes** à l’aide de **réseaux de neurones convolutifs (CNN)**, en classifiant automatiquement des scènes naturelles à partir d’images.
+
+Le projet s’appuie sur le dataset **Intel Image Classification**, composé d’environ **25 000 images** réparties en **6 classes** :
+Buildings, Forest, Glacier, Mountain, Sea et Street.
+
+## 🧩 Problématique
+Comment concevoir un modèle de deep learning capable :
+- d’extraire efficacement des motifs visuels (formes, textures, couleurs),
+- de généraliser correctement sur des images jamais vues,
+- et de limiter le surapprentissage sur un problème de classification complexe.
+
+## 🖼️ Données & Préparation
+- Dataset structuré en ensembles **train / validation / test**
+- Redimensionnement des images en **150×150×3**
+- Normalisation des pixels (valeurs entre 0 et 1)
+- **Data augmentation** :
+  - rotations
+  - zoom
+  - décalages
+  - retournement horizontal
+
+## 🧠 Modélisation Deep Learning
+### CNN personnalisés
+- Architecture basée sur plusieurs couches :
+  - Convolution + MaxPooling
+  - Fully Connected
+- Optimiseur : **Adam**
+- Fonction de perte : **Categorical Crossentropy**
+- Métrique : **Accuracy**
+- Techniques de régularisation :
+  - Dropout
+  - Batch Normalization
+  - EarlyStopping
+  - ReduceLROnPlateau
+
+### Transfer Learning
+- Utilisation d’un modèle **pré-entraîné sur ImageNet (ResNet50)**
+- Couches gelées pour conserver les représentations visuelles générales
+- Ajout d’une tête de classification adaptée au problème
+- Amélioration significative des performances
+
+## 📊 Évaluation & Résultats
+- Évaluation sur le jeu de test
+- Analyse via :
+  - Accuracy
+  - Matrice de confusion
+  - Rapport de classification
+- **Performance finale : ~93 % de précision**
+- Analyse des confusions récurrentes entre classes visuellement proches
+  (ex. Mountain vs Glacier, Street vs Buildings)
+
+## 🔍 Interprétabilité du modèle
+- Visualisation des filtres de convolution
+- Analyse des activations intermédiaires
+- Méthodes d’explicabilité :
+  - Occlusion Sensitivity
+  
+
+## 🛠️ Technologies utilisées
+- Python
+- TensorFlow / Keras
+- NumPy, Pandas
+- Matplotlib / Seaborn
+- CNN & Transfer Learning
+
+
+## 🚀 Compétences mobilisées
+- Deep Learning appliqué
+- Réseaux de neurones convolutifs (CNN)
+- Transfer Learning
+- Régularisation et optimisation de modèles
+- Interprétation et explicabilité des modèles
+- Analyse critique des performances
